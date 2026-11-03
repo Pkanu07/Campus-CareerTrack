@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Campus CareerTrack - A modern student placement and internship management system for university campuses." />
+  <title>Campus CareerTrack | Student Placement & Internship Portal</title>
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Landing Navigation Bar -->
+  <header class="landing-navbar">
+    <a href="index.html" class="brand-logo" aria-label="Campus CareerTrack Homepage">
+      <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+      <span>CareerTrack</span>
+    </a>
+
+    <nav aria-label="Primary Navigation">
+      <ul class="landing-nav-links">
+        <li><a href="index.html" style="color: var(--primary); font-weight: 600;">Home</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="eligibility.html">Eligibility Checker</a></li>
+        <li><a href="#benefits">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+      </ul>
+    </nav>
+
+    <div class="landing-nav-actions">
+      <button type="button" class="theme-toggle-btn" onclick="App.toggleTheme()" title="Toggle Light/Dark Theme">
+        <i class="fa-solid fa-moon"></i><span class="theme-text">Theme</span>
+      </button>
+      <a href="dashboard.html" class="btn btn-primary">
+        <i class="fa-solid fa-arrow-right-to-bracket"></i> Student Portal
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section">
+      <div class="hero-pill">
+        <i class="fa-solid fa-bullhorn"></i> Campus Placement Season 2026–27 Active
+      </div>
+      <h1 class="hero-heading">
+        Your Career Journey <br />
+        <span class="text-gradient">Starts Here.</span>
+      </h1>
+      <p class="hero-description">
+        Explore curated internships, apply to premier campus placements, verify role eligibility in real-time, and track your recruitment journey from application to final offer.
+      </p>
+      
+      <div class="hero-cta-group">
+        <a href="dashboard.html" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-rocket"></i> Get Started
+        </a>
+        <a href="opportunities.html" class="btn btn-outline-primary btn-lg">
+          <i class="fa-solid fa-magnifying-glass"></i> Explore Opportunities
+        </a>
+      </div>
+
+      <!-- Platform Statistics Banner (Sample Data) -->
+      <section class="platform-stats-banner" aria-label="Campus CareerTrack Demonstration Statistics">
+        <div class="stat-item">
+          <div class="stat-value">150+</div>
+          <div class="stat-label">Partner Companies</div>
+          <div class="stat-sublabel">Tech, Product & Core recruiters</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">850+</div>
+          <div class="stat-label">Students Placed</div>
+          <div class="stat-sublabel">Full-time & co-op offers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">₹14.5 LPA</div>
+          <div class="stat-label">Average CTC</div>
+          <div class="stat-sublabel">Peak package ₹34 LPA</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">94.8%</div>
+          <div class="stat-label">Placement Rate</div>
+          <div class="stat-sublabel">CSE & IT departments</div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Featured Opportunities Section -->
+    <section class="landing-section" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="section-header">
+        <span class="section-tag">Curated Openings</span>
+        <h2 class="section-title">Featured Opportunities</h2>
+        <p class="section-subtitle">
+          Hand-picked internships and full-time graduate positions open for third and fourth-year engineering students.
+        </p>
+      </div>
+
+      <div class="opportunities-preview-grid" id="featuredOpportunitiesGrid">
+        <!-- Rendered dynamically by script or static sample preview -->
+        <article class="opportunity-card">
+          <div class="opp-card-header">
+            <div class="opp-company-meta">
+              <div class="company-logo-badge" style="background-color: #4285F4;">G</div>
+              <div>
+                <span class="opp-company-name">Google</span>
+                <div class="opp-location"><i class="fa-solid fa-location-dot"></i> Bangalore &bull; Hybrid</div>
+              </div>
+            </div>
+            <span class="badge badge-primary">Internship</span>
+          </div>
+          <h3 class="opp-title"><a href="opportunity-details.html?id=opp-1">Software Development Engineer (SDE) Intern</a></h3>
+          <p class="opp-desc">Design and implement scalable distributed systems impacting billions of global users across Google Cloud.</p>
+          <div class="opp-skills-list">
+            <span class="skill-tag">Data Structures</span>
+            <span class="skill-tag">Algorithms</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Python</span>
+          </div>
+          <div class="opp-meta-footer">
+            <div class="opp-stipend-box">
+              <strong>₹1,00,000 / mo</strong>
+              <small>Min CGPA: 8.0</small>
+            </div>
+            <a href="opportunity-details.html?id=opp-1" class="btn btn-sm btn-outline-primary">View Role</a>
+          </div>
+        </article>
+
+        <article class="opportunity-card">
+          <div class="opp-card-header">
+            <div class="opp-company-meta">
+              <div class="company-logo-badge" style="background-color: #00A4EF;">MS</div>
+              <div>
+                <span class="opp-company-name">Microsoft</span>
+                <div class="opp-location"><i class="fa-solid fa-location-dot"></i> Hyderabad &bull; Hybrid</div>
+              </div>
+            </div>
+            <span class="badge badge-primary">Full-time</span>
+          </div>
+          <h3 class="opp-title"><a href="opportunity-details.html?id=opp-2">Graduate Technology Associate (Full-Time)</a></h3>
+          <p class="opp-desc">Architect resilient cloud microservices and developer tooling on the Microsoft Azure AI platform.</p>
+          <div class="opp-skills-list">
+            <span class="skill-tag">Azure</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">Cloud</span>
+            <span class="skill-tag">REST APIs</span>
+          </div>
+          <div class="opp-meta-footer">
+            <div class="opp-stipend-box">
+              <strong>₹18 - ₹22 LPA</strong>
+              <small>Min CGPA: 7.5</small>
+            </div>
+            <a href="opportunity-details.html?id=opp-2" class="btn btn-sm btn-outline-primary">View Role</a>
+          </div>
+        </article>
+
+        <article class="opportunity-card">
+          <div class="opp-card-header">
+            <div class="opp-company-meta">
+              <div class="company-logo-badge" style="background-color: #0C2340;">RZ</div>
+              <div>
+                <span class="opp-company-name">Razorpay</span>
+                <div class="opp-location"><i class="fa-solid fa-location-dot"></i> Bangalore &bull; Remote</div>
+              </div>
+            </div>
+            <span class="badge badge-primary">Full-time</span>
+          </div>
+          <h3 class="opp-title"><a href="opportunity-details.html?id=opp-3">Frontend Web Developer</a></h3>
+          <p class="opp-desc">Craft ultra-responsive checkout micro-interactions processing billions in financial transactions.</p>
+          <div class="opp-skills-list">
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">TypeScript</span>
+          </div>
+          <div class="opp-meta-footer">
+            <div class="opp-stipend-box">
+              <strong>₹14 - ₹18 LPA</strong>
+              <small>Min CGPA: 7.0</small>
+            </div>
+            <a href="opportunity-details.html?id=opp-3" class="btn btn-sm btn-outline-primary">View Role</a>
+          </div>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="opportunities.html" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-grid-2"></i> Browse All 12+ Opportunities
+        </a>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="landing-section" id="benefits">
+      <div class="section-header">
+        <span class="section-tag">Why Campus CareerTrack</span>
+        <h2 class="section-title">Built for Ambitious Engineering Students</h2>
+        <p class="section-subtitle">
+          Say goodbye to fragmented WhatsApp groups and confusing notice boards. Everything you need for campus placement success in one unified workspace.
+        </p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h3 class="benefit-title">Centralized Placement Hub</h3>
+          <p class="benefit-desc">
+            Access verified internship and graduate listings with accurate stipend, salary breakdowns, job descriptions, and eligibility requirements.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3 class="benefit-title">Instant Eligibility Engine</h3>
+          <p class="benefit-desc">
+            Instantly compare your CGPA, backlog status, and skillset against company criteria to know exactly which roles you qualify for before applying.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-bars-progress"></i></div>
+          <h3 class="benefit-title">Real-Time Application Tracker</h3>
+          <p class="benefit-desc">
+            Monitor each application through Shortlisted, Interview Scheduled, and Offer stages with clear timestamps and feedback remarks.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-bookmark"></i></div>
+          <h3 class="benefit-title">Opportunity Bookmarks</h3>
+          <p class="benefit-desc">
+            Save interesting job openings to review and apply to later before critical deadlines, safely stored in your browser session.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-bell"></i></div>
+          <h3 class="benefit-title">Smart Notifications</h3>
+          <p class="benefit-desc">
+            Never miss an interview date or application deadline with automated status updates, alerts, and reminder badges.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-user-shield"></i></div>
+          <h3 class="benefit-title">Student Profile Showcase</h3>
+          <p class="benefit-desc">
+            Maintain your academic credentials, verified skills tags, resume file link, and GitHub/LinkedIn portfolios in a structured profile.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="landing-section" id="how-it-works" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="section-header">
+        <span class="section-tag">Streamlined Process</span>
+        <h2 class="section-title">How Campus CareerTrack Works</h2>
+        <p class="section-subtitle">
+          Four easy steps from student onboarding to campus recruitment offer letter.
+        </p>
+      </div>
+
+      <div class="how-it-works-steps">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Build Your Profile</h3>
+          <p class="step-desc">Enter your register number, degree, department, CGPA, verified skills, and resume details.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Discover & Evaluate</h3>
+          <p class="step-desc">Filter opportunities by role, location, and skills. Run the eligibility checker to verify fit.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Apply in One Click</h3>
+          <p class="step-desc">Submit complete applications with attached resume info and candidate statements instantly.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3 class="step-title">Track to Offer</h3>
+          <p class="step-desc">Stay notified as hiring coordinators schedule interviews, evaluate rounds, and issue offers.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="landing-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <span>CareerTrack</span>
+        </a>
+        <p>
+          A professional student placement & internship management system engineered for the B.E. Computer Science and Engineering Web Technology Laboratory (LWP Review 01).
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Student Dashboard</a></li>
+          <li><a href="opportunities.html">Opportunities</a></li>
+          <li><a href="saved-opportunities.html">Saved Roles</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Platform Features</h5>
+        <ul>
+          <li><a href="eligibility.html">Eligibility Checker</a></li>
+          <li><a href="applications.html">Application Tracker</a></li>
+          <li><a href="profile.html">Student Profile</a></li>
+          <li><a href="notifications.html">Notifications Center</a></li>
+          <li><a href="settings.html">Theme & Settings</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Academic Info</h5>
+        <ul>
+          <li>Department: CSE</li>
+          <li>Course: Web Technology Lab</li>
+          <li>Project: Individual (Review 01)</li>
+          <li>Client-Side: HTML5, CSS3, JS</li>
+          <li>Storage: LocalStorage API</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Campus CareerTrack. Developed for University Web Technology Laboratory Evaluation.</div>
+      <div>Designed with pure HTML5, CSS3 & Vanilla JavaScript. No external server required.</div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Libraries -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

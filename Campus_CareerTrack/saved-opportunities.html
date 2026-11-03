@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saved Opportunities | Campus CareerTrack</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <div class="app-container">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Collapsible Sidebar -->
+    <aside class="sidebar" id="appSidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-brand">
+          <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <span>CareerTrack</span>
+        </a>
+        <button type="button" class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-nav-container">
+        <div class="nav-section-title">Menu</div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="dashboard.html" class="nav-item">
+              <i class="fa-solid fa-table-columns"></i>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="opportunities.html" class="nav-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <span class="nav-text">Opportunities</span>
+              <span class="nav-badge">12</span>
+            </a>
+          </li>
+          <li>
+            <a href="applications.html" class="nav-item">
+              <i class="fa-solid fa-list-check"></i>
+              <span class="nav-text">My Applications</span>
+            </a>
+          </li>
+          <li>
+            <a href="saved-opportunities.html" class="nav-item active">
+              <i class="fa-solid fa-bookmark"></i>
+              <span class="nav-text">Saved Jobs</span>
+            </a>
+          </li>
+          <li>
+            <a href="eligibility.html" class="nav-item">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span class="nav-text">Eligibility Checker</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-title">Account & Tools</div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="notifications.html" class="nav-item">
+              <i class="fa-solid fa-bell"></i>
+              <span class="nav-text">Notifications</span>
+              <span class="nav-badge notification-badge" style="display: none;">0</span>
+            </a>
+          </li>
+          <li>
+            <a href="profile.html" class="nav-item">
+              <i class="fa-solid fa-user-graduate"></i>
+              <span class="nav-text">Student Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html" class="nav-item">
+              <i class="fa-solid fa-gear"></i>
+              <span class="nav-text">Settings & Demo</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="sidebar-user-card" title="View Profile">
+          <div class="avatar user-avatar-display">PK</div>
+          <div class="user-meta">
+            <div class="user-name-display">Priti Kumari</div>
+            <div class="user-role-display">B.E. CSE Student</div>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-content-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          
+          <div class="topbar-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="global-search-input" placeholder="Search roles or companies..." />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button type="button" class="theme-toggle-btn" onclick="App.toggleTheme()">
+            <i class="fa-solid fa-moon"></i><span class="theme-text">Dark Mode</span>
+          </button>
+
+          <a href="notifications.html" class="topbar-action-btn" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notification-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="profile.html" class="avatar user-avatar-display" title="Student Profile">PK</a>
+        </div>
+      </header>
+
+      <main class="page-container">
+        <!-- Header -->
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Saved Opportunities</h1>
+            <p class="page-subtitle">Your bookmarked placement and internship openings saved for quick review and application.</p>
+          </div>
+          <div>
+            <a href="opportunities.html" class="btn btn-outline-primary">
+              <i class="fa-solid fa-plus"></i> Browse More Roles
+            </a>
+          </div>
+        </div>
+
+        <!-- Filter & Search Toolbar (Shared with opportunities.js) -->
+        <section class="filter-toolbar" aria-label="Saved Filters">
+          <div class="filter-grid" style="grid-template-columns: 2fr 1fr 1fr 1fr;">
+            <div class="filter-group">
+              <label for="searchQuery"><i class="fa-solid fa-magnifying-glass"></i> Search Saved Roles</label>
+              <input type="text" id="searchQuery" class="form-control" placeholder="Search saved roles by company or title..." />
+            </div>
+
+            <div class="filter-group">
+              <label for="filterLocation"><i class="fa-solid fa-location-dot"></i> Location</label>
+              <select id="filterLocation" class="form-select">
+                <option value="all">All Locations</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Pune">Pune</option>
+                <option value="Gurgaon">Gurgaon</option>
+                <option value="Remote">Remote</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="filterType"><i class="fa-solid fa-briefcase"></i> Job Type</label>
+              <select id="filterType" class="form-select">
+                <option value="all">All Types</option>
+                <option value="Internship">Internship</option>
+                <option value="Full-time">Full-time</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="sortBy"><i class="fa-solid fa-arrow-down-short-wide"></i> Sort</label>
+              <select id="sortBy" class="form-select">
+                <option value="deadline-asc">Deadline (Soonest)</option>
+                <option value="stipend-desc">Stipend (Highest)</option>
+                <option value="title-asc">Title (A-Z)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-action-row">
+            <span id="opportunitiesCountDisplay" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500;">
+              Showing saved opportunities
+            </span>
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="clearFiltersBtn">
+              <i class="fa-solid fa-rotate-left"></i> Reset Filter
+            </button>
+          </div>
+        </section>
+
+        <!-- Saved Opportunities Cards Grid -->
+        <section class="opportunities-cards-grid" id="opportunitiesCardsContainer">
+          <!-- Populated dynamically by js/opportunities.js in saved mode -->
+        </section>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="opportunitiesEmptyState" style="display: none;">
+          <div class="empty-icon"><i class="fa-regular fa-bookmark"></i></div>
+          <h3>No Saved Opportunities Yet</h3>
+          <p>You haven't bookmarked any opportunities yet. Browse our curated listings and save roles that match your career goals.</p>
+          <a href="opportunities.html" class="btn btn-primary">Explore All Opportunities</a>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/opportunities.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize opportunities controller in saved-only mode
+      OpportunitiesController.init(true);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings & System Demo | Campus CareerTrack</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <div class="app-container">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Collapsible Sidebar -->
+    <aside class="sidebar" id="appSidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-brand">
+          <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <span>CareerTrack</span>
+        </a>
+        <button type="button" class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-nav-container">
+        <div class="nav-section-title">Menu</div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="dashboard.html" class="nav-item">
+              <i class="fa-solid fa-table-columns"></i>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="opportunities.html" class="nav-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <span class="nav-text">Opportunities</span>
+              <span class="nav-badge">12</span>
+            </a>
+          </li>
+          <li>
+            <a href="applications.html" class="nav-item">
+              <i class="fa-solid fa-list-check"></i>
+              <span class="nav-text">My Applications</span>
+            </a>
+          </li>
+          <li>
+            <a href="saved-opportunities.html" class="nav-item">
+              <i class="fa-solid fa-bookmark"></i>
+              <span class="nav-text">Saved Jobs</span>
+            </a>
+          </li>
+          <li>
+            <a href="eligibility.html" class="nav-item">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span class="nav-text">Eligibility Checker</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-title">Account & Tools</div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="notifications.html" class="nav-item">
+              <i class="fa-solid fa-bell"></i>
+              <span class="nav-text">Notifications</span>
+              <span class="nav-badge notification-badge" style="display: none;">0</span>
+            </a>
+          </li>
+          <li>
+            <a href="profile.html" class="nav-item">
+              <i class="fa-solid fa-user-graduate"></i>
+              <span class="nav-text">Student Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html" class="nav-item active">
+              <i class="fa-solid fa-gear"></i>
+              <span class="nav-text">Settings & Demo</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="sidebar-user-card" title="View Profile">
+          <div class="avatar user-avatar-display">PK</div>
+          <div class="user-meta">
+            <div class="user-name-display">Priti Kumari</div>
+            <div class="user-role-display">B.E. CSE Student</div>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-content-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          
+          <div class="topbar-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="global-search-input" placeholder="Search roles or companies..." />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button type="button" class="theme-toggle-btn" onclick="App.toggleTheme()">
+            <i class="fa-solid fa-moon"></i><span class="theme-text">Dark Mode</span>
+          </button>
+
+          <a href="notifications.html" class="topbar-action-btn" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notification-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="profile.html" class="avatar user-avatar-display" title="Student Profile">PK</a>
+        </div>
+      </header>
+
+      <main class="page-container">
+        <!-- Header -->
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Settings & Demo Controls</h1>
+            <p class="page-subtitle">Configure theme preferences, notification reminders, and manage demonstration state data.</p>
+          </div>
+        </div>
+
+        <!-- 1. Appearance / Theme Preference -->
+        <section class="settings-section-card">
+          <div class="settings-section-header">
+            <h2 class="settings-section-title"><i class="fa-solid fa-palette text-primary"></i> Interface Appearance</h2>
+            <p class="settings-section-desc">Select your preferred color theme across the placement application.</p>
+          </div>
+
+          <div class="theme-options-grid">
+            <div class="theme-card-option" data-theme-val="light">
+              <div class="theme-preview-box" style="background-color: #ffffff; color: #1e293b; border: 1px solid #cbd5e1;">
+                <i class="fa-solid fa-sun" style="color: #f59e0b;"></i>
+              </div>
+              <div>
+                <strong>Light Theme</strong>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Clean, crisp navy & white palette</p>
+              </div>
+            </div>
+
+            <div class="theme-card-option" data-theme-val="dark">
+              <div class="theme-preview-box" style="background-color: #111827; color: #f3f4f6; border: 1px solid #374151;">
+                <i class="fa-solid fa-moon" style="color: #6366f1;"></i>
+              </div>
+              <div>
+                <strong>Dark Theme</strong>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Deep slate & indigo night palette</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Notification Preferences -->
+        <section class="settings-section-card">
+          <div class="settings-section-header">
+            <h2 class="settings-section-title"><i class="fa-solid fa-bell text-primary"></i> Notification Preferences</h2>
+            <p class="settings-section-desc">Control simulated alerts and notification log behavior.</p>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <strong>Email Digest Alerts</strong>
+              <p>Simulate campus placement office email notifications on status changes.</p>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="settingEmailAlerts" class="form-check-input" checked />
+            </div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <strong>Application Deadline Reminders</strong>
+              <p>Display countdown badges and alerts when company drives close within 7 days.</p>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="settingDeadlineAlerts" class="form-check-input" checked />
+            </div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <strong>Interview Schedule Reminders</strong>
+              <p>Trigger priority notifications when a company schedules a technical round.</p>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="settingInterviewAlerts" class="form-check-input" checked />
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Demo Data Management (Crucial for Evaluation) -->
+        <section class="settings-section-card" style="border-color: rgba(239, 68, 68, 0.3);">
+          <div class="settings-section-header">
+            <h2 class="settings-section-title text-danger">
+              <i class="fa-solid fa-database"></i> Demonstration Data Management
+            </h2>
+            <p class="settings-section-desc">
+              Reset or export your browser localStorage state during laboratory evaluation and project presentations.
+            </p>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <strong>Reset to Default Demo Data</strong>
+              <p>Restores the initial 12 opportunities, 4 sample applications, 3 bookmarks, and default student profile (Priti Kumari).</p>
+            </div>
+            <button type="button" class="btn btn-warning" id="resetDemoDataBtn">
+              <i class="fa-solid fa-rotate"></i> Reset Sample Data
+            </button>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <strong>Export Demo State (JSON Backup)</strong>
+              <p>Download a complete JSON file snapshot of all profile, application, and bookmark records stored in localStorage.</p>
+            </div>
+            <button type="button" class="btn btn-secondary" id="exportDataJsonBtn">
+              <i class="fa-solid fa-download"></i> Export JSON Backup
+            </button>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <strong>Clear All Local Application Data</strong>
+              <p>Completely deletes all local storage items. Use this to demonstrate a clean first-time user initialization.</p>
+            </div>
+            <button type="button" class="btn btn-danger" id="clearAllDataBtn">
+              <i class="fa-solid fa-trash-can"></i> Clear All Data
+            </button>
+          </div>
+        </section>
+
+        <!-- 4. System Architecture & Lab Info -->
+        <section class="settings-section-card">
+          <div class="settings-section-header">
+            <h2 class="settings-section-title"><i class="fa-solid fa-circle-nodes text-primary"></i> Project & Architecture Details</h2>
+            <p class="settings-section-desc">Academic project metadata for Web Technology Lab individual evaluation.</p>
+          </div>
+
+          <div class="criteria-list-box" style="margin: 0;">
+            <div class="criteria-row">
+              <span>Project Title:</span>
+              <strong>Campus CareerTrack – Student Placement & Internship Portal</strong>
+            </div>
+            <div class="criteria-row">
+              <span>Course / Lab:</span>
+              <strong>B.E. Computer Science and Engineering &bull; Web Technology Lab (LWP Review 01)</strong>
+            </div>
+            <div class="criteria-row">
+              <span>Technology Stack:</span>
+              <strong>Semantic HTML5, CSS3 Variables & Flex/Grid, Vanilla JavaScript (ES6+), LocalStorage API</strong>
+            </div>
+            <div class="criteria-row">
+              <span>Client-Side Data Engine:</span>
+              <strong>JSON Serialization with Corrupted Key Auto-Recovery</strong>
+            </div>
+            <div class="criteria-row">
+              <span>Review 02 Extension Scope:</span>
+              <strong>Prepared for relational schema migration to PHP/Java Servlets + MySQL Backend</strong>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/settings.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      SettingsController.init();
+    });
+  </script>
+</body>
+</html>

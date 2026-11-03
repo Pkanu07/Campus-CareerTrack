@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard | Campus CareerTrack</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar Overlay for mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Collapsible Sidebar -->
+    <aside class="sidebar" id="appSidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-brand">
+          <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <span>CareerTrack</span>
+        </a>
+        <button type="button" class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-nav-container">
+        <div class="nav-section-title">Menu</div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="dashboard.html" class="nav-item active">
+              <i class="fa-solid fa-table-columns"></i>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="opportunities.html" class="nav-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <span class="nav-text">Opportunities</span>
+              <span class="nav-badge">12</span>
+            </a>
+          </li>
+          <li>
+            <a href="applications.html" class="nav-item">
+              <i class="fa-solid fa-list-check"></i>
+              <span class="nav-text">My Applications</span>
+            </a>
+          </li>
+          <li>
+            <a href="saved-opportunities.html" class="nav-item">
+              <i class="fa-solid fa-bookmark"></i>
+              <span class="nav-text">Saved Jobs</span>
+            </a>
+          </li>
+          <li>
+            <a href="eligibility.html" class="nav-item">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span class="nav-text">Eligibility Checker</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-title">Account & Tools</div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="notifications.html" class="nav-item">
+              <i class="fa-solid fa-bell"></i>
+              <span class="nav-text">Notifications</span>
+              <span class="nav-badge notification-badge" style="display: none;">0</span>
+            </a>
+          </li>
+          <li>
+            <a href="profile.html" class="nav-item">
+              <i class="fa-solid fa-user-graduate"></i>
+              <span class="nav-text">Student Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html" class="nav-item">
+              <i class="fa-solid fa-gear"></i>
+              <span class="nav-text">Settings & Demo</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sidebar User Footer -->
+      <div class="sidebar-footer">
+        <a href="profile.html" class="sidebar-user-card" title="View Profile">
+          <div class="avatar user-avatar-display">PK</div>
+          <div class="user-meta">
+            <div class="user-name-display">Priti Kumari</div>
+            <div class="user-role-display">B.E. CSE Student</div>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-content-wrapper">
+      <!-- Topbar Navigation -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Open navigation menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          
+          <div class="topbar-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="global-search-input" placeholder="Search roles, companies (Press Enter)..." />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button type="button" class="theme-toggle-btn" onclick="App.toggleTheme()">
+            <i class="fa-solid fa-moon"></i><span class="theme-text">Dark Mode</span>
+          </button>
+
+          <a href="notifications.html" class="topbar-action-btn" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notification-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="profile.html" class="avatar user-avatar-display" title="Student Profile">PK</a>
+        </div>
+      </header>
+
+      <!-- Dashboard Main Page Content -->
+      <main class="page-container">
+        <!-- Welcome Banner -->
+        <section class="welcome-banner">
+          <div class="welcome-content">
+            <div class="welcome-chip">
+              <span class="pulse-dot"></span> Campus Placement Season 2026–27
+            </div>
+            <h1>Good Day, <span id="dashWelcomeName">Priti</span>! 👋</h1>
+            <p>
+              Your campus placement journey is underway. Explore 12+ company listings, verify your eligibility benchmarks, and track application milestones.
+            </p>
+            <div class="welcome-actions">
+              <a href="opportunities.html" class="btn btn-white">
+                <i class="fa-solid fa-magnifying-glass"></i> Explore Opportunities
+              </a>
+              <a href="eligibility.html" class="btn btn-banner-outline">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Check Role Eligibility
+              </a>
+              <a href="profile.html" class="btn btn-banner-outline">
+                <i class="fa-solid fa-user-pen"></i> Update Profile
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dynamic Statistics Cards -->
+        <section class="stat-cards-grid" aria-label="Student Placement Statistics">
+          <article class="stat-card">
+            <div class="stat-card-info">
+              <div class="stat-number" id="statTotalApplications">4</div>
+              <div class="stat-label">Total Applications</div>
+              <div class="stat-delta text-gradient"><i class="fa-solid fa-paper-plane"></i> Submitted</div>
+            </div>
+            <div class="stat-icon-wrapper stat-icon-indigo">
+              <i class="fa-solid fa-file-invoice"></i>
+            </div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-card-info">
+              <div class="stat-number" id="statShortlisted">1</div>
+              <div class="stat-label">Shortlisted Profiles</div>
+              <div class="stat-delta" style="color: #4f46e5;"><i class="fa-solid fa-circle-check"></i> Advanced</div>
+            </div>
+            <div class="stat-icon-wrapper stat-icon-indigo">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-card-info">
+              <div class="stat-number" id="statInterviews">1</div>
+              <div class="stat-label">Upcoming Interviews</div>
+              <div class="stat-delta" style="color: var(--warning-text);"><i class="fa-solid fa-calendar-day"></i> Active Rounds</div>
+            </div>
+            <div class="stat-icon-wrapper stat-icon-amber">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-card-info">
+              <div class="stat-number" id="statSaved">3</div>
+              <div class="stat-label">Saved Opportunities</div>
+              <div class="stat-delta" style="color: var(--accent);"><i class="fa-solid fa-bookmark"></i> Bookmarked</div>
+            </div>
+            <div class="stat-icon-wrapper stat-icon-cyan">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </article>
+        </section>
+
+        <!-- Dashboard Main Grid (2 Column) -->
+        <div class="dashboard-main-grid">
+          <!-- Left Column -->
+          <div class="dashboard-col-left">
+            <!-- Recent Applications Panel -->
+            <section class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h2 class="panel-title">Recent Application Activity</h2>
+                  <p class="panel-subtitle">Real-time status of your active placement submissions</p>
+                </div>
+                <a href="applications.html" class="btn btn-sm btn-outline-primary">
+                  View All Tracker <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Company & Role</th>
+                      <th>Applied Date</th>
+                      <th>Current Status</th>
+                      <th style="text-align: right;">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="recentApplicationsTableBody">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="empty-state" id="recentApplicationsEmptyState" style="display: none; padding: 2rem;">
+                <div class="empty-icon"><i class="fa-regular fa-folder-open"></i></div>
+                <h3>No Applications Yet</h3>
+                <p>Browse open opportunities and submit your first application.</p>
+                <a href="opportunities.html" class="btn btn-primary btn-sm">Browse Opportunities</a>
+              </div>
+            </section>
+
+            <!-- Application Status Distribution Chart -->
+            <section class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h2 class="panel-title">Application Status Distribution</h2>
+                  <p class="panel-subtitle">Visual breakdown of your placement progress stages</p>
+                </div>
+                <a href="applications.html" class="btn btn-sm btn-outline-secondary">Demo Manager</a>
+              </div>
+              <div class="panel-body">
+                <div class="status-chart-container">
+                  <div class="chart-visual-wrapper" id="statusChartSvgBox">
+                    <!-- Dynamic SVG Donut Chart -->
+                  </div>
+
+                  <div class="chart-legends-list">
+                    <div class="legend-item">
+                      <div class="legend-left">
+                        <span class="legend-dot" style="background-color: #3b82f6;"></span>
+                        <span>Applied</span>
+                      </div>
+                      <span class="legend-value" id="legendCountApplied">1</span>
+                    </div>
+
+                    <div class="legend-item">
+                      <div class="legend-left">
+                        <span class="legend-dot" style="background-color: #4f46e5;"></span>
+                        <span>Shortlisted</span>
+                      </div>
+                      <span class="legend-value" id="legendCountShortlisted">1</span>
+                    </div>
+
+                    <div class="legend-item">
+                      <div class="legend-left">
+                        <span class="legend-dot" style="background-color: #f59e0b;"></span>
+                        <span>Interview Scheduled</span>
+                      </div>
+                      <span class="legend-value" id="legendCountInterview">1</span>
+                    </div>
+
+                    <div class="legend-item">
+                      <div class="legend-left">
+                        <span class="legend-dot" style="background-color: #10b981;"></span>
+                        <span>Selected (Offers)</span>
+                      </div>
+                      <span class="legend-value" id="legendCountSelected">1</span>
+                    </div>
+
+                    <div class="legend-item">
+                      <div class="legend-left">
+                        <span class="legend-dot" style="background-color: #ef4444;"></span>
+                        <span>Rejected</span>
+                      </div>
+                      <span class="legend-value" id="legendCountRejected">0</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Right Column -->
+          <div class="dashboard-col-right">
+            <!-- Upcoming Deadlines Panel -->
+            <section class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h2 class="panel-title">Upcoming Deadlines</h2>
+                  <p class="panel-subtitle">Opportunities closing soon</p>
+                </div>
+                <a href="opportunities.html" class="btn btn-sm btn-outline-secondary">All Roles</a>
+              </div>
+              <div class="panel-body">
+                <div class="deadlines-list" id="upcomingDeadlinesContainer">
+                  <!-- Populated dynamically -->
+                </div>
+              </div>
+            </section>
+
+            <!-- Recommended Opportunities Panel -->
+            <section class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h2 class="panel-title">Recommended For You</h2>
+                  <p class="panel-subtitle">Matched to your skills & CGPA</p>
+                </div>
+                <a href="opportunities.html" class="btn btn-sm btn-outline-secondary">More</a>
+              </div>
+              <div class="panel-body">
+                <div id="recommendedOppsContainer">
+                  <!-- Populated dynamically -->
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      DashboardController.init();
+    });
+  </script>
+</body>
+</html>

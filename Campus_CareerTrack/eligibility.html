@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Role Eligibility Checker | Campus CareerTrack</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <div class="app-container">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Collapsible Sidebar -->
+    <aside class="sidebar" id="appSidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-brand">
+          <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <span>CareerTrack</span>
+        </a>
+        <button type="button" class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-nav-container">
+        <div class="nav-section-title">Menu</div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="dashboard.html" class="nav-item">
+              <i class="fa-solid fa-table-columns"></i>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="opportunities.html" class="nav-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <span class="nav-text">Opportunities</span>
+              <span class="nav-badge">12</span>
+            </a>
+          </li>
+          <li>
+            <a href="applications.html" class="nav-item">
+              <i class="fa-solid fa-list-check"></i>
+              <span class="nav-text">My Applications</span>
+            </a>
+          </li>
+          <li>
+            <a href="saved-opportunities.html" class="nav-item">
+              <i class="fa-solid fa-bookmark"></i>
+              <span class="nav-text">Saved Jobs</span>
+            </a>
+          </li>
+          <li>
+            <a href="eligibility.html" class="nav-item active">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span class="nav-text">Eligibility Checker</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-title">Account & Tools</div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="notifications.html" class="nav-item">
+              <i class="fa-solid fa-bell"></i>
+              <span class="nav-text">Notifications</span>
+              <span class="nav-badge notification-badge" style="display: none;">0</span>
+            </a>
+          </li>
+          <li>
+            <a href="profile.html" class="nav-item">
+              <i class="fa-solid fa-user-graduate"></i>
+              <span class="nav-text">Student Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html" class="nav-item">
+              <i class="fa-solid fa-gear"></i>
+              <span class="nav-text">Settings & Demo</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="sidebar-user-card" title="View Profile">
+          <div class="avatar user-avatar-display">PK</div>
+          <div class="user-meta">
+            <div class="user-name-display">Priti Kumari</div>
+            <div class="user-role-display">B.E. CSE Student</div>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-content-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          
+          <div class="topbar-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="global-search-input" placeholder="Search roles or companies..." />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button type="button" class="theme-toggle-btn" onclick="App.toggleTheme()">
+            <i class="fa-solid fa-moon"></i><span class="theme-text">Dark Mode</span>
+          </button>
+
+          <a href="notifications.html" class="topbar-action-btn" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notification-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="profile.html" class="avatar user-avatar-display" title="Student Profile">PK</a>
+        </div>
+      </header>
+
+      <main class="page-container">
+        <!-- Header -->
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Role Eligibility Checker</h1>
+            <p class="page-subtitle">Verify your academic benchmarks and skills alignment against specific company hiring criteria.</p>
+          </div>
+        </div>
+
+        <!-- Demonstration Disclaimer Alert -->
+        <div class="alert alert-info" style="margin-bottom: 2rem;">
+          <i class="fa-solid fa-circle-info" style="font-size: 1.25rem;"></i>
+          <div>
+            <strong>Automated Academic Assessment:</strong> This client-side evaluation engine simulates the recruitment criteria published by placement partners. It serves as a preliminary evaluation tool for lab demonstration and is not an official company selection decision.
+          </div>
+        </div>
+
+        <!-- 2-Column Grid: Form & Results -->
+        <div class="eligibility-container">
+          <!-- Left Column: Input Form & Opportunity Benchmark -->
+          <div>
+            <div class="eligibility-card" style="margin-bottom: 1.5rem;">
+              <h3 style="font-size: 1.15rem; margin-bottom: 1rem;"><i class="fa-solid fa-briefcase text-primary"></i> 1. Select Target Opportunity</h3>
+              
+              <div class="form-group">
+                <label for="eligibilityOppSelect" class="form-label">Company & Opportunity:</label>
+                <select id="eligibilityOppSelect" class="form-select">
+                  <!-- Populated dynamically -->
+                </select>
+              </div>
+
+              <!-- Company Benchmark Box -->
+              <h4 style="font-size: 0.95rem; margin-top: 1.25rem; margin-bottom: 0.5rem; color: var(--text-muted);">
+                Published Company Eligibility Criteria:
+              </h4>
+              <div class="criteria-list-box" id="companyBenchmarkBox">
+                <!-- Injected dynamically -->
+              </div>
+            </div>
+
+            <!-- Student Parameters Card -->
+            <div class="eligibility-card">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <h3 style="font-size: 1.15rem; margin: 0;"><i class="fa-solid fa-user-check text-primary"></i> 2. Candidate Parameters</h3>
+                <button type="button" class="btn btn-sm btn-outline-secondary" id="resetToProfileBtn" title="Reset to Student Profile data">
+                  <i class="fa-solid fa-rotate-left"></i> Use Profile Data
+                </button>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+                Pre-filled from your Student Profile. You can test &quot;what-if&quot; scenarios by modifying CGPA or backlogs below.
+              </p>
+
+              <form id="eligibilityEvalForm">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="evalCGPA" class="form-label">Your CGPA:</label>
+                    <input type="number" id="evalCGPA" class="form-control" step="0.01" min="0" max="10" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="evalBacklogs" class="form-label">Active Backlogs:</label>
+                    <input type="number" id="evalBacklogs" class="form-control" min="0" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="evalGradYear" class="form-label">Graduation Batch:</label>
+                    <select id="evalGradYear" class="form-select">
+                      <option value="2026">2026</option>
+                      <option value="2027">2027</option>
+                      <option value="2028">2028</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="evalBranch" class="form-label">Engineering Discipline:</label>
+                    <input type="text" id="evalBranch" class="form-control" />
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 1rem;">
+                  <label for="evalSkills" class="form-label">Your Skills (Comma separated):</label>
+                  <input type="text" id="evalSkills" class="form-control" />
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                  <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="fa-solid fa-calculator"></i> Run Eligibility Assessment
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right Column: Assessment Result Box -->
+          <div>
+            <div class="eligibility-card" id="eligibilityResultBox">
+              <!-- Dynamically rendered by js/eligibility.js -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/eligibility.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      EligibilityController.init();
+    });
+  </script>
+</body>
+</html>
